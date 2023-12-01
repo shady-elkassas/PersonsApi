@@ -37,11 +37,6 @@ struct ContentView: View {
                         
                         Color.gray.opacity(0.1).ignoresSafeArea()
                         
-                        Text("No Persons Found...")
-                            .foregroundColor(colorScheme == .light ? .black:.white)
-                            .font(.largeTitle)
-                        
-                        
                         ScrollView {
                             
                             VStack(spacing: 16) {
@@ -53,6 +48,7 @@ struct ContentView: View {
                                         NavigationLink(destination: detailView(personData: person, heightOfImage: geometry.size.height/4, sizeIncrement: accessibilitySize)) {
                                             listItem(personData: person, heightOfImage: geometry.size.height/6, sizeIncrement: accessibilitySize)
                                                 .frame(width: geometry.size.width*0.9)
+                                                
                                             
                                         }
                                     }
@@ -64,6 +60,7 @@ struct ContentView: View {
                                         NavigationLink(destination: detailViewCached(person: person, heightOfImage: geometry.size.height/4, sizeIncrement: accessibilitySize)) {
                                             listItemCached(person: person,heightOfImage: geometry.size.height/6, sizeIncrement: accessibilitySize)
                                                 .frame(width: geometry.size.width*0.9)
+                                             
                                         }
                                     }
                                     .padding(.top)
@@ -76,6 +73,7 @@ struct ContentView: View {
                             .navigationTitle("Persons")
                             
                         }
+                        
                         
                         
                     }
