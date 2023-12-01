@@ -20,10 +20,10 @@ struct PhoneListConnected: View {
     
     var body: some View {
        
-        if let emails = personData.email, !emails.isEmpty{
+        if let phones = personData.phone, !phones.isEmpty{
             VStack{
                
-                ForEach(emails, id: \.value){ phone in
+                ForEach(phones, id: \.value){ phone in
                     
                     HStack{
                         
