@@ -39,6 +39,7 @@ struct Pagination: Codable {
 
 // MARK: - Datum
 struct Datum: Codable {
+    
     let id, companyID: Int?
     let ownerID: OwnerID?
     let orgID: OrgID?

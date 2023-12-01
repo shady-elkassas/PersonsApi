@@ -37,12 +37,18 @@ struct ContentView: View {
                         
                         Color.gray.opacity(0.1).ignoresSafeArea()
                         
+                        Text("No Persons Found...")
+                            .foregroundColor(.black)
+                            .font(.largeTitle)
+                        
                         
                         ScrollView {
                             
                             VStack(spacing: 16) {
                                 
                                 if(networkMonitor.isConnected){
+                                    
+                        
                                     ForEach(viewModel.personsData, id: \.id) { person in
                                         NavigationLink(destination: detailView(personData: person, heightOfImage: geometry.size.height/4, sizeIncrement: accessibilitySize)) {
                                             listItem(personData: person, heightOfImage: geometry.size.height/6, sizeIncrement: accessibilitySize)

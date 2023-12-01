@@ -13,7 +13,6 @@ struct PipedriveApp: App {
     var body: some Scene {
         WindowGroup {
             splashScreenView()
-          
         }
     }
 }
