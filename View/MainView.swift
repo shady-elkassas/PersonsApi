@@ -38,7 +38,7 @@ struct ContentView: View {
                         Color.gray.opacity(0.1).ignoresSafeArea()
                         
                         Text("No Persons Found...")
-                            .foregroundColor(.black)
+                            .foregroundColor(colorScheme == .light ? .black:.white)
                             .font(.largeTitle)
                         
                         
