@@ -38,7 +38,7 @@ struct EmailListConnected: View {
                             .underline()
                             .onTapGesture {
                 
-                                if let emailURL = URL(string: "mailto:\(email.value)") {
+                                if let emailURL = URL(string: "mailto:\(String(describing: email.value))") {
                                     UIApplication.shared.open(emailURL)
                                 }
                 

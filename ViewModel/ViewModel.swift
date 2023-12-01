@@ -43,8 +43,11 @@ class ViewModel: ObservableObject, RetreiveDataProtocol{
                
             self.PersonRoot = response
            
-            //Cache Persons
-            caheData.cachePersons(data: response.data!, managedObjectContext: managedObjectContext!)
+            if(API_KEY != "YOUR_API_KEY"){
+                //Cache Persons
+                caheData.cachePersons(data: response.data ?? [], managedObjectContext: managedObjectContext!)
+            }
+           
 
             // Update the published value on the main thread
             DispatchQueue.main.async { [weak self] in

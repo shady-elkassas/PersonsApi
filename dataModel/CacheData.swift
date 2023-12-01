@@ -23,7 +23,7 @@ class CacheData: CacheDataProtocol{
             do {
                 let results = try managedObjectContext.fetch(fetchRequest)
                 if let existingPerson = results.first {
-                    // Person with the same ID already exists, update the details if needed
+                    // Person with the same ID already exists, update the details
                     
                     // Check if imageURL is not an empty string and set it
                     let imageURL = personData.pictureID?.pictures?["512"] ?? ""
@@ -41,7 +41,7 @@ class CacheData: CacheDataProtocol{
                         
                         let emailEntities = personEmails.compactMap { emailData -> EmailCoreData? in
                             guard let value = emailData.value, !value.isEmpty else {
-                                return nil // Skip empty or nil values
+                                return nil 
                             }
                             
                             let emailEntity = EmailCoreData(context: managedObjectContext)
