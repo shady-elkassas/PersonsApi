@@ -37,7 +37,7 @@ struct EmailListCached: View {
                             .underline()
                             .onTapGesture {
                                
-                                if let emailValue = email.value, let emailURL = URL(string: "mailto:\(emailValue)") {
+                                if let emailValue = email.value, emailValue != "", let emailURL = URL(string: "mailto:\(emailValue)") {
                                                                   
                                     UIApplication.shared.open(emailURL)
                                                              

@@ -37,42 +37,46 @@ struct ContentView: View {
                         
                         Color.gray.opacity(0.1).ignoresSafeArea()
                         
-                        ScrollView {
-                            
-                            VStack(spacing: 16) {
+                            ScrollView {
                                 
-                                if(networkMonitor.isConnected){
+                                VStack(spacing: 16) {
                                     
-                        
-                                    ForEach(viewModel.personsData, id: \.id) { person in
-                                        NavigationLink(destination: detailView(personData: person, heightOfImage: geometry.size.height/4, sizeIncrement: accessibilitySize)) {
-                                            listItem(personData: person, heightOfImage: geometry.size.height/6, sizeIncrement: accessibilitySize)
-                                                .frame(width: geometry.size.width*0.9)
-                                                
-                                            
-                                        }
-                                    }
-                                    .padding(.top)
-                                }else{
-                                    
-                                    ForEach(personsCoreData, id: \.id) { person in
+                                    if(networkMonitor.isConnected){
                                         
-                                        NavigationLink(destination: detailViewCached(person: person, heightOfImage: geometry.size.height/4, sizeIncrement: accessibilitySize)) {
-                                            listItemCached(person: person,heightOfImage: geometry.size.height/6, sizeIncrement: accessibilitySize)
-                                                .frame(width: geometry.size.width*0.9)
-                                             
+                            
+                                        ForEach(viewModel.personsData, id: \.id) { person in
+                                            NavigationLink(destination: detailView(personData: person, heightOfImage: geometry.size.height/4, sizeIncrement: accessibilitySize)) {
+                                                listItem(personData: person, heightOfImage: geometry.size.height/6, sizeIncrement: accessibilitySize)
+                                                    .frame(width: geometry.size.width*0.9)
+                                                    
+                                                
+                                            }
                                         }
+                                        .padding(.top)
+                                    }else{
+                                        
+                                        ForEach(personsCoreData, id: \.id) { person in
+                                            
+                                            NavigationLink(destination: detailViewCached(person: person, heightOfImage: geometry.size.height/4, sizeIncrement: accessibilitySize)) {
+                                                listItemCached(person: person,heightOfImage: geometry.size.height/6, sizeIncrement: accessibilitySize)
+                                                    .frame(width: geometry.size.width*0.9)
+                                                 
+                                            }
+                                        }
+                                        .padding(.top)
+                                        
                                     }
-                                    .padding(.top)
+                                    
+                                    Spacer()
                                     
                                 }
-                                
-                                Spacer()
+                                .navigationTitle("Persons")
                                 
                             }
-                            .navigationTitle("Persons")
-                            
-                        }
+                        
+                        
+                        
+
                         
                         
                         

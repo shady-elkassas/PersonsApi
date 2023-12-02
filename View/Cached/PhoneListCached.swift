@@ -35,7 +35,7 @@ struct PhoneListCached: View {
                             .italic()
                             .underline()
                             .onTapGesture {
-                                if let phoneValue = phone.value, let phoneURL = URL(string: "tel://\(phoneValue)") {
+                                if let phoneValue = phone.value, phoneValue != "", let phoneURL = URL(string: "tel://\(phoneValue)") {
                                     UIApplication.shared.open(phoneURL)
                                 }
                             }

@@ -32,6 +32,7 @@ struct PhoneListConnected: View {
                             .frame(width: 20,height: 20)
                             .padding()
                         
+                        
                         Text((phone.value ?? "") + " " + "(\(phone.label ?? "No Phones"))")
                             .font(.system(size: CGFloat(16 + sizeIncrement), weight: .regular, design: .default))
                             .foregroundColor(colorScheme == . light ? Color(UIColor.darkGray) : .white)
@@ -39,9 +40,9 @@ struct PhoneListConnected: View {
                             .underline()
                             .onTapGesture {
                                     
-                                if let phoneURL = URL(string: "tel://\(phone.value)") {
+                                if let phone = phone.value, phone != "", let url =  URL(string: "tel://\(phone)") {
                                        
-                                    UIApplication.shared.open(phoneURL)
+                                    UIApplication.shared.open(url)
                         
                                 }
 
