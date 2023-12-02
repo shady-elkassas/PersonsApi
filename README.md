@@ -1,4 +1,4 @@
-# Pipedrive Persons Dataa App
+# Pipedrive Persons Data App
 
 A SwiftUI app that allows you to browse and view details of "persons" in your pipedrive account.
 
@@ -37,6 +37,6 @@ Contributions are welcome! If you have any ideas, bug fixes, or enhancements, pl
 
 ## Acknowledgments
 
-Special thanks to the Pipedrive for providing the Persons data.
+Special thanks to the Pipedrive for providing the Persons data API.
 
 Happy Pipedrive exploring!
